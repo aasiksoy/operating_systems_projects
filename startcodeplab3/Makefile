@@ -7,10 +7,10 @@ clean:
 	rm sensor_node
 
 test_server: test_server.c lib/tcpsock.c
-	gcc -g test_server.c lib/tcpsock.c -o test_server
+	gcc -g test_server.c lib/tcpsock.c -o test_server -lpthread
 
 sensor_node: sensor_node.c lib/tcpsock.c
-	gcc -g sensor_node.c lib/tcpsock.c -o sensor_node
+	gcc -g sensor_node.c lib/tcpsock.c -o sensor_node -lpthread
 
 runserver: test_server
 	./test_server 5678 4
